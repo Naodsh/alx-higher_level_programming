@@ -8,5 +8,7 @@ def main():
     sys.stderr.write(message + '\n')
     sys.exit(1)
 
+
 if __name__ == "__main__":
+
     main()
