@@ -1,5 +1,4 @@
+import dis
 def magic_calculation(a, b):
-    result = 98
-    result += a
-    result += b
-    return result
+    return 98 + (a ** b)
+dis.dis(magic_calculation)
