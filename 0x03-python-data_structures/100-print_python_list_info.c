@@ -1,4 +1,4 @@
-#include "Python.h"
+#include "lists.h"
 /**
  * print_python_list_info - Prints information about a Python list.
  * @p: Python list object
@@ -8,7 +8,7 @@
 void print_python_list_info(PyObject *p)
 {
 	Py_ssize_t size, allocated, i;
-	yObject *item;
+	PyObject *item;
 
 	size = Py_SIZE(p);
 	allocated = ((PyListObject *)p)->allocated;
