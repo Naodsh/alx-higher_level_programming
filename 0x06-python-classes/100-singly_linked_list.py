@@ -1,110 +1,122 @@
 #!/usr/bin/python3
-
-"""A class representing a square"""
-
-
-class Square:
+class Node:
     """
-    A class representing a square.
+    A class representing a node of a singly linked list.
 
     Attributes:
-        __size (int): The size of the square (private).
-        __position (tuple): The position of the square (private).
+        __data (int): The data value of the node (private).
+        __next_node (Node): The reference to the next node (private).
     """
-    def __init__(self, size=0, position=(0, 0)):
+    def __init__(self, data, next_node=None):
         """
-        Initializes a Square instance with optional size and position.
+        Initializes a Node instance with data and next_node.
 
         Args:
-            size (int, optional): The size of the square. Defaults to 0.
-            position (tuple, optional): The position of the square.
-            Defaults to (0, 0).
+            data (int): The data value of the node.
+            next_node (Node, optional): The reference to the next node.
+            Defaults to None.
+
         Raises:
-            TypeError: If size is not an integer or if position is not a
-            tuple of 2 positive integers.
-            ValueError: If size is less than 0 or if position values
-            are less than 0.
+            TypeError: If data is not an integer or if next_node is not
+            None or a Node object.
         """
-        self.size = size
-        self.position = position
+        self.data = data
+        self.next_node = next_node
 
     @property
-    def size(self):
+    def data(self):
         """
-        Getter method to retrieve the size attribute.
+        Getter method to retrieve the data attribute.
 
         Returns:
-            int: The size of the square.
+            int: The data value of the node.
         """
-        return self.__size
+        return self.__data
 
-    @size.setter
-    def size(self, value):
+    @data.setter
+    def data(self, value):
         """
-        Setter method to set the size attribute.
+        Setter method to set the data attribute.
 
         Args:
-            value (int): The size of the square.
+            value (int): The data value of the node.
+
         Raises:
             TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
         """
         if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
+            raise TypeError("data must be an integer")
+        self.__data = value
 
     @property
-    def position(self):
+    def next_node(self):
         """
-        Getter method to retrieve the position attribute.
+        Getter method to retrieve the next_node attribute.
 
         Returns:
-            tuple: The position of the square.
+            Node: The reference to the next node.
         """
-        return self.__position
+        return self.__next_node
 
-    @position.setter
-    def position(self, value):
+    @next_node.setter
+    def next_node(self, value):
         """
-        Setter method to set the position attribute.
+        Setter method to set the next_node attribute.
 
         Args:
-            value (tuple): The position of the square.
-        Raises:
-            TypeError: If value is not a tuple of 2 positive integers.
-            ValueError: If position values are less than 0.
-        """
-        if not isinstance(value, tuple) or len(value) != 2 or not \
-                all(isinstance(v, int) for v in value):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
-            raise ValueError("position values must be >= 0")
-        else:
-            self.__position = value
+            value (Node): The reference to the next node.
 
-    def area(self):
+        Raises:
+            TypeError: If value is not None or a Node object.
         """
-        Calculates the area of the square.
+        if value is not None and not isinstance(value, Node):
+            raise TypeError("next_node must be a Node object")
+        self.__next_node = value
+
+
+class SinglyLinkedList:
+    """
+    A class representing a singly linked list.
+
+    Attributes:
+        head: The head of the linked list.
+    """
+    def __init__(self):
+        """
+        Initializes an empty SinglyLinkedList.
+        """
+        self.head = None
+
+    def sorted_insert(self, value):
+        """
+        Inserts a new Node into the correct sorted position in the list
+        (increasing order).
+
+        Args:
+            value (int): The value to be inserted into the list.
+        """
+        new_node = Node(value)
+        if self.head is None or self.head.data >= value:
+            new_node.next_node = self.head
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next_node is not None and
+            current.next_node.data < value:
+                current = current.next_node
+            new_node.next_node = current.next_node
+            current.next_node = new_node
+
+    def __str__(self):
+        """
+        String representation of the SinglyLinkedList.
 
         Returns:
-            int: The area of the square.
+            str: The string representation of the linked list.
         """
-        return self.__size ** 2
-
-    def my_print(self):
-        """
-        Prints the square using '#' character based on size and position.
-
-        Prints:
-            The square represented by '#' characters.
-        """
-        if self.__size == 0:
-            print()
-        else:
-            for _ in range(self.__position[1]):
-                print()
-            for _ in range(self.__size):
-                print(" " * self.__position[0] + "#" * self.__size)
+        current = self.head
+        nodes = []
+        while current:
+            nodes.append(str(current.data))
+            current = current.next_node
+        return "\n".join(nodes)
