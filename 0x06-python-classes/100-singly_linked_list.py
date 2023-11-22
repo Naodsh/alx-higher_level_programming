@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+
+
+"""A class representing a node of a singly linked list."""
+
+
 class Node:
     """
     A class representing a node of a singly linked list.
@@ -72,6 +77,9 @@ class Node:
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
+
+"""A class representing a singly linked list."""
 
 
 class SinglyLinkedList:
