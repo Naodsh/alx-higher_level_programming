@@ -1,3 +1,4 @@
+#!/usr/bin/pythone3
 class LockedClass:
     def __setattr__(self, name, value):
         """
