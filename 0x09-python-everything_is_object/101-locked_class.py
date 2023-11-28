@@ -14,7 +14,8 @@ class LockedClass:
         # and 'first_name' has not been set yet
         if not hasattr(self, 'first_name') and name != 'first_name':
             # If conditions are met, raise an AttributeError
-            raise AttributeError(f"'LockedClass' object has no attribute '{name}'")
+            raise AttributeError(f"'LockedClass' object has no attribute \
+                    '{name}'")
         else:
             # Otherwise, allow setting the attribute
             self.__dict__[name] = value
