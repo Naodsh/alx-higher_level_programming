@@ -1,4 +1,4 @@
-#!/usr/bin/pythone3
+#!/usr/bin/python3
 class LockedClass:
     def __setattr__(self, name, value):
         """
