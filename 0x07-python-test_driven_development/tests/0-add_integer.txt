@@ -1,25 +1,34 @@
-#!/usr/bin/python3
-# Test cases for add_integer function
+The ``0-add_integer`` module
+======================
 
->>> add_integer(3, 5)
-8
+Using ``add_integer``
+-------------------
 
->>> add_integer(2.5, 4.5)
-7
+Importing the function from the module:
+	>>> add_integer = __import__("0-add_integer").add_integer
 
->>> add_integer(-10, 10)
-0
+Checking for module docstring:
+	 >>> m = __import__("0-add_integer").__doc__
+	 >>> len(m) > 1
+	 True
 
->>> add_integer(5)
-103
+Checking for function docstring:
+	 >>> f = __import__("0-add_integer").add_integer.__doc__
+         >>> len(f) > 1
+         True
 
->>> add_integer('a', 5)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or b must be an integer
+Checking regular addition:
+	 >>> add_integer(5, 4)
+	 9
 
->>> add_integer(8, 'b')
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer or b must be an integer
+Checking positive with negative:
+	 >>> add_integer(4, -6)
+	 -2
 
+Checking float with int:
+	 >>> add_integer(3.1, 5)
+	 8
+
+Checking both float:
+	 >>> add_integer(5.23, 6.1)
+	 11
