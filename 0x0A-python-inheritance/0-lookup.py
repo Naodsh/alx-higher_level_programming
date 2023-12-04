@@ -1,4 +1,4 @@
-#!/usr/bin/pythone3
+#!/usr/bin/python3
 """ Module that return attributes and methods of an object."""
 
 
