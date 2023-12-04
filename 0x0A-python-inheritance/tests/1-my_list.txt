@@ -1,0 +1,38 @@
+The test case for ``1-my_list`` Module
+
+**************************************
+
+
+
+Importing:
+        >>> print_sorted = __import__("1-my_list").MyList.print_sorted
+
+Checking for docstring:
+	>>> docs = __import__("1-my_list").__doc__
+	>>> len(docs) > 1
+	True
+
+Check Sorting a list with positive integers:
+        >>> my_list = [5, 2, 8, 1, 7]
+        >>> print_sorted(my_list)
+        [1, 2, 5, 7, 8]
+
+Check Sorting a list with negative integers:
+        >>> my_list = [-3, -1, -5, -2, -4]
+        >>> print_sorted(my_list)
+        [-5, -4, -3, -2, -1]
+
+Check Sorting an empty list:
+        >>> my_list = []
+        >>> print_sorted(my_list)
+        []
+
+Check Sorting a list with repeated elements:
+        >>> my_list = [3, 1, 3, 2, 1]
+        >>> print_sorted(my_list)
+        [1, 1, 2, 3, 3]
+
+Check Sorting a list with a single element:
+        >>> my_list = [42]
+        >>> print_sorted(my_list)
+        [42]
