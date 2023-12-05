@@ -1,4 +1,4 @@
-#!/usr/binpython3
+#!/usr/bin/python3
 """
     Writes an object to a text file using JSON representation.
 """
