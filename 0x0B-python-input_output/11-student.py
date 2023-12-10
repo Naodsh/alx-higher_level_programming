@@ -13,7 +13,7 @@ class Student:
         """Retrieves a dictionary representation of a Student instance"""
         if attrs is None:
             return self.__dict__
-        
+
         result = {}
         for attr in attrs:
             if hasattr(self, attr):
