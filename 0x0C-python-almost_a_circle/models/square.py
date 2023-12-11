@@ -28,7 +28,7 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def __str__(self):
-        return "[Square] {} {}/{} - {}" .format(
+        return "[Square] ({}) {}/{} - {}" .format(
                 self.id, self.x, self.y, self.size)
 
         # return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
