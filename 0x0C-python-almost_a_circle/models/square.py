@@ -6,17 +6,12 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
+    """ Square Class inherits from Rectangle """
     def __init__(self, size, x=0, y=0, id=None):
+        """ init function """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
+        """ str function """
         return "[Square] ({}) {}/{} - {}" .format(
                 self.id, self.x, self.y, self.width)
-
-    def to_dictionary(self):
-        return {
-            'id': self.id,
-            'size': self.width,
-            'x': self.x,
-            'y': self.y
-        }
