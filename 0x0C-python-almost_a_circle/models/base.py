@@ -47,7 +47,7 @@ class Base:
                 pen.left(90)
                 pen.forward(rectangle.height)
                 pen.left(90)
-        
+
         for square in list_squares:
             pen.penup()
             pen.goto(square.x, square.y)
