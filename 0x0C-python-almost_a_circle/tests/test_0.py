@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+""" Test Module """
+
+
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+
 
 class TestBase(unittest.TestCase):
     def test_base_id(self):
@@ -15,6 +19,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b4.id, 12)
         b5 = Base()
         self.assertEqual(b5.id, 4)
+
 
 class TestRectangle(unittest.TestCase):
     def test_rectangle_id(self):
