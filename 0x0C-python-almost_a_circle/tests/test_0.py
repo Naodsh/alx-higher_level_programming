@@ -29,7 +29,3 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.id, 6)
         r3 = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r3.id, 12)
-
-
-if __name__ == '__main__':
-    unittest.main()
