@@ -3,6 +3,4 @@
 -- Specify the database name as a command-line argument
 
 -- Show tables in the specified database
-USE `mysql`;
-
 SHOW TABLES;
