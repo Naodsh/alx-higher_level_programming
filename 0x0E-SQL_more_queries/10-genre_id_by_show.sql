@@ -1,8 +1,5 @@
 -- This script lists all shows with at least one genre linked in the hbtn_0d_tvshows database
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows`;
-
 -- List all shows with at least one genre linked
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows

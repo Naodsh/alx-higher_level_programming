@@ -1,8 +1,5 @@
 -- This script lists all shows from hbtn_0d_tvshows_rate by their rating
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows_rate`;
-
 -- List all shows by their rating in descending order
 SELECT tv_shows.title, SUM(tvshow_ratings.rating) AS rating_sum
 FROM tv_shows

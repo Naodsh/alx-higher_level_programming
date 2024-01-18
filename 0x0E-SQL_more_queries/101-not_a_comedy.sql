@@ -1,8 +1,5 @@
 -- This script lists all shows without the genre Comedy in the hbtn_0d_tvshows database
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows`;
-
 -- Get the genre id for the genre Comedy
 SET @comedy_genre_id = (SELECT id FROM tv_genres WHERE name = 'Comedy' LIMIT 1);
 

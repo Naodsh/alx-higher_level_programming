@@ -1,8 +1,5 @@
 -- This script lists all genres of the show Dexter from the hbtn_0d_tvshows database
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows`;
-
 -- List all genres of the show Dexter
 SELECT tv_genres.name
 FROM tv_shows

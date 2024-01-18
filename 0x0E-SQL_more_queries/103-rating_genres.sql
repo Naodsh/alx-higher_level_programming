@@ -1,8 +1,5 @@
 -- This script lists all genres in the hbtn_0d_tvshows_rate database by their rating
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows_rate`;
-
 -- List all genres by their rating in descending order
 SELECT tv_genres.name, SUM(tvshow_ratings.rating) AS rating_sum
 FROM tv_genres

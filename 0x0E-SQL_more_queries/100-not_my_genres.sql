@@ -1,8 +1,5 @@
 -- This script lists all genres not linked to the show Dexter in the hbtn_0d_tvshows database
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows`;
-
 -- Get the genre id linked to the show Dexter
 SET @dexter_genre_id = (SELECT tv_genres.id
                         FROM tv_shows

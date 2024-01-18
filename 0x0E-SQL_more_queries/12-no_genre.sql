@@ -1,8 +1,5 @@
 -- This script lists all shows without a linked genre in the hbtn_0d_tvshows database
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows`;
-
 -- List all shows without a linked genre
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows

@@ -1,8 +1,5 @@
 -- This script lists all Comedy shows in the hbtn_0d_tvshows database
 
--- Specify the database name as a command-line argument
-USE `hbtn_0d_tvshows`;
-
 -- List all Comedy shows
 SELECT tv_shows.title
 FROM tv_shows
