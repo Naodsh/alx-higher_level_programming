@@ -6,7 +6,7 @@ const arg = process.argv[2];
 let x = Number(arg);
 
 // Check if the conversion was successful and the number is positive
-if (isNaN(x) || x <= 0) {
+if (isNaN(x)) {
   // If not, print "Missing number of occurrences"
   console.log('Missing number of occurrences');
 } else {
