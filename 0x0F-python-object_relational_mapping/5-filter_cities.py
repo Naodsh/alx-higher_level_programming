@@ -36,15 +36,20 @@ if __name__ == "__main__":
     # Create a cursor object to interact with the database
     cursor = db.cursor()
 
-    # The query to fetch all cities of the given state from the 'cities' table
-    cursor.execute("SELECT GROUP_CONCAT(cities.name SEPARATOR ', ') FROM \
+    # Prepare the query to all cities of the given state from 'cities' table
+    query = "SELECT GROUP_CONCAT(cities.name SEPARATOR ', ') FROM \
             cities JOIN states ON cities.state_id = states.id WHERE \
-            states.name = %s ORDER BY cities.id ASC", (state_name,))
+            states.name = %s ORDER BY cities.id ASC"
+
+    # Execute query with the state name as a parameter to avoid SQL injection
+    cursor.execute(query, (state_name,))
 
     # Fetch the result
     data = cursor.fetchone()
 
-    if data[0] is not None:
+    if data[0] is None:
+        print()
+    else:
         print(data[0])
 
     # Close the cursor and database connection
