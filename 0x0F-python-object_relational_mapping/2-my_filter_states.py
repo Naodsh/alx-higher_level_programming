@@ -34,7 +34,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute a query to retrieve states where the name matches the user input
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC".format(
             state_name)
     cursor.execute(query)
     # Fetch all the results
