@@ -17,8 +17,10 @@ if __name__ == "__main__":
         sys.exit(1)
 
     # Create a connection to the MySQL server
-    username, password, db_name, state_name =
-    sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    username = sys.argv[1]
+    password = sys.argv[2]
+    username = sys.argv[3]
+    state_name = sys.argv[4]
     engine = create_engine(
             f'mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}')
 
