@@ -1,7 +1,7 @@
-#!/usr/bin/pythone3
+#!/usr/bin/python3
 """
-a Python file similar to model_state.py named model_city.py that contains
-the class definition of a City.
+write a script 14-model_city_fetch_by_state.py that prints all
+City objects from the database hbtn_0e_14_usa:
 """
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
