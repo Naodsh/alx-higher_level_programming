@@ -11,4 +11,3 @@ const fileContent2 = fs.readFileSync(sourceFile2, 'utf8');
 const concatenatedContent = fileContent1 + '\n' + fileContent2;
 
 fs.writeFileSync(destinationFile, concatenatedContent);
-
