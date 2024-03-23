@@ -8,6 +8,6 @@ const destinationFile = process.argv[4];
 const fileContent1 = fs.readFileSync(sourceFile1, 'utf8');
 const fileContent2 = fs.readFileSync(sourceFile2, 'utf8');
 
-const concatenatedContent = fileContent1 + '\n' + fileContent2;
+const concatenatedContent = fileContent1 + fileContent2;
 
 fs.writeFileSync(destinationFile, concatenatedContent);
